@@ -63,7 +63,6 @@ func (connection *Connection) getConsumerMessage(consumerId string) {
 		consumer := connection.consumers[consumerPosition]
 		nr, err := consumer.connection.Read(buf)
 		if err != nil {
-			// return make([]byte, 0)
 			fmt.Print("Errro reading message")
 		}
 
