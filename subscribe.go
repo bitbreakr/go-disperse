@@ -19,7 +19,6 @@ func (connection *Connection) ping() {
 			for _, consumer := range connection.consumers {
 				_, pingError := consumer.connection.Write([]byte("hunga"))
 				if pingError != nil {
-					// fmt.Print("PING ERROR")
 					connection.killConsumer(consumer.id)
 				} else {
 					connection.getConsumerMessage(consumer.id)
